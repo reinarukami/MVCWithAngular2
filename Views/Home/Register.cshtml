@@ -1,0 +1,73 @@
+﻿
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+<div ng-app="MyApp">
+
+    <div ng-controller="RegisterController">
+        <form novalidate name="f1" ng-submit="SaveData(Login)">
+             <div>{{message}}</div>
+
+            <table>
+                <tr>
+                    <td>Full Name:</td>
+                    <td>
+                        <input type="text" ng-model="Login.FullName" name="uFullName" ng-class="submitted?'ng-dirty':''" required autofocus/>
+                        <span class="has-error" ng-show="(f1.uFullName.$dirty || submitted) && f1.uFullName.$error.required">Fullname Required!</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Email ID:</td>
+                    <td>
+                        <input type="text" ng-model="Login.Email" name="uEmail" ng-class="submitted?'ng-dirty':''" required autofocus />
+                        <span class="has-error" ng-show="(f1.uEmail.$dirty || submitted) && f1.uEmail.$error.required">Email Required!</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Username:</td>
+                    <td>
+                        <input type="text" ng-model="Login.Username" name="uUsername" ng-class="submitted?'ng-dirty':''" required autofocus />
+                        <span class="has-error" ng-show="(f1.uUsername.$dirty || submitted) && f1.uUsername.$error.required">Username Required!</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Password:</td>
+                    <td>
+                        <input type="text" ng-model="Login.Password" name="uPassword" ng-class="submitted?'ng-dirty':''" required autofocus />
+                        <span class="has-error" ng-show="(f1.uPassword.$dirty || submitted) && f1.uPassword.$error.required">Password Required!</span>
+                    </td>
+                </tr>
+
+                <tr>
+                    <td>Gender:</td>
+                    <td>
+                        <input type="radio" ng-model="Login.Gender" name="uGender" value="Male" required /> Male
+                        <input type="radio" ng-model="Login.Gender" name="uGender" value="Female" required /> Female
+                        <span class="has-error" ng-show="(f1.uGender.$dirty || submitted) && f1.uGender.$error.required">Gender Required!</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td>
+                        <input type="submit" value="{{submitText}}" />
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+
+</div>
+
+
+@section scripts{
+    <script src="~/Scripts/AngularController/RegisterController.js"></script>
+}
+
+
+    
+

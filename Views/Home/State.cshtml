@@ -1,0 +1,24 @@
+﻿
+@{
+    ViewBag.Title = "State";
+}
+
+<h2>State</h2>
+
+<div ng-controller="GetCtyStsController">
+    Country: <select ng-model="CountryID" ng-options="I.CountryID as I.CountryName for I in CountryList" ng-change="GetState()">
+                <option value="">Select Country</option> 
+             </select>
+
+             <select ng-model="StateID" ng-options="I.StateID as I.StateName for I in StateList" ng-change="ShowResult()">
+                 <option value="">{{StateTextToShow}}</option>
+             </select>
+
+    {{Result}}
+</div>
+
+@section scripts
+{
+    <script src="~/Scripts/AngularController/GetCtyStsController.js"></script>
+}
+
